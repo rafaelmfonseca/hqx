@@ -165,10 +165,7 @@ int main_loadBitmap(
 
 int main(int argc, char **argv )
 {
-	uint32_t factor = 2;
-
-	if (argc != 2 && argc != 3) return 1;
-	if (argc == 3) factor = atoi(argv[2]);
+	uint32_t factor = atoi(argv[3]);
 
 	// loads the input image
 	uint16_t width, height;
@@ -194,7 +191,7 @@ int main(int argc, char **argv )
 	std::cout << "Processing time: " << t / (CLOCKS_PER_SEC / 1000) << " ms" << std::endl;
 
 	// saves the resized image
-	if ( main_saveBitmap(output, width * factor, height * factor, "output.bmp") != 0 ) return 1;
+	if ( main_saveBitmap(output, width * factor, height * factor, argv[2]) != 0 ) return 1;
 
 	delete[] image;
 	delete[] output;
