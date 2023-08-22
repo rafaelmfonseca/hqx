@@ -14,6 +14,17 @@ For more information, check out the archived version of the original Maxim Stepi
 
 There are two "versions" of the HQx algorithm: one to produce a sharper output and another for a smoothed output. Check out the file `HQx.cc` for more information.
 
+## Compiling
+
+- Open Visual Studio 2022 installer, choose "Desktop development with C++" and click "Install".
+
+```
+choco install -y --no-progress cmake --install-arguments="ADD_CMAKE_TO_PATH=System"
+choco install -y --no-progress mingw gcc
+mkdir build
+cmake -B build
+```
+
 ## Samples
 
 Original test image:
